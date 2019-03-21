@@ -19,7 +19,14 @@ export const example = async (req: Request, res: Response): Promise<void> => {
     document.body.appendChild(text);
   });
 
-  await page.screenshot({ path: 'example.png' });
+  const png = await page.screenshot({
+    type: 'png',
+    encoding: 'binary',
+  });
 
-  res.status(200).sendFile('example.png');
+  res.writeHead(200, {
+    'Content-Type': 'image/png',
+    'Content-Length': png.length,
+  });
+  res.end(png);
 };
