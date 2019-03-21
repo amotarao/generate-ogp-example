@@ -7,6 +7,8 @@ import * as puppeteer from 'puppeteer';
 const baseHtml = fs.readFileSync('./base.html', 'utf8');
 
 export const example = async (req: Request, res: Response): Promise<void> => {
+  const text = req.query['text'] || 'Example Text';
+
   const browser = await puppeteer.launch({
     args: ['--no-sandbox'],
   });
@@ -15,8 +17,8 @@ export const example = async (req: Request, res: Response): Promise<void> => {
   await page.setContent(baseHtml);
 
   await page.evaluate(() => {
-    const text = document.getElementById('text') as HTMLParagraphElement;
-    text.innerText = 'Example Text';
+    const textElm = document.getElementById('text') as HTMLParagraphElement;
+    textElm.innerText = text;
   });
 
   const png = await page.screenshot({
