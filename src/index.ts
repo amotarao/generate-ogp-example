@@ -4,7 +4,9 @@ import { Request, Response } from 'express';
 import * as puppeteer from 'puppeteer';
 
 export const example = async (req: Request, res: Response): Promise<void> => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox'],
+  });
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 720 });
 
