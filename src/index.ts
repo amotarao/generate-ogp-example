@@ -13,7 +13,7 @@ export const example = async (req: Request, res: Response): Promise<void> => {
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 630 });
   await page.setContent(
-    '<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet"/><style>*{margin:0;padding:0;}#app{align-items:center;display:flex;justify-content:center;}#text{font-family:"M PLUS Rounded 1c";font-size: 40px;}</style></head><body><div id="app"><p id="text">Example Text</p></div></body></html>',
+    '<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet"/><style>*{margin:0;padding:0;}#app{align-items:center;display:flex;height:100vh;justify-content:center;width:100vw;}#text{font-family:"M PLUS Rounded 1c";font-size: 40px;}</style></head><body><div id="app"><p id="text"></p></div></body></html>',
     {
       waitUntil: 'networkidle0',
     }
