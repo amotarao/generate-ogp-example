@@ -16,7 +16,8 @@ export const example = async (req: Request, res: Response): Promise<void> => {
   );
 
   await page.evaluate(() => {
-    const textElm = document.getElementById('text') as HTMLParagraphElement;
+    const textElm = document.querySelector<HTMLParagraphElement>('#text');
+    if (!textElm) return;
     textElm.innerText = text;
   });
 
