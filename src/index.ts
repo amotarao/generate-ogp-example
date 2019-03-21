@@ -18,6 +18,7 @@ export const example = async (req: Request, res: Response): Promise<void> => {
       waitUntil: 'networkidle2',
     }
   );
+  await page.evaluateHandle('document.fonts.ready');
 
   await page.evaluate((text: string) => {
     const textElm = document.querySelector<HTMLParagraphElement>('#text');
