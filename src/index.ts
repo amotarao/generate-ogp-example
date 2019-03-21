@@ -5,7 +5,6 @@ import * as puppeteer from 'puppeteer';
 
 export const example = async (req: Request, res: Response): Promise<void> => {
   const text: string = req.query['text'] || 'Example Text';
-  console.log(`text: ${text}`);
 
   const browser = await puppeteer.launch({
     args: ['--no-sandbox'],
