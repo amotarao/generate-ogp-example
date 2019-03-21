@@ -31,7 +31,7 @@ steps:
       - "--entry-point=example"
       - "--source=build"
       - "--region=asia-northeast1"
-      - "--memory=512MB"
+      - "--memory=1GB"
       - "--runtime=nodejs8"
       - "--trigger-http"
     waitFor:
