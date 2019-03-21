@@ -15,7 +15,7 @@ export const example = async (req: Request, res: Response): Promise<void> => {
   await page.setContent(
     '<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet"/><style>*{margin:0;padding:0;}#app{align-items:center;display:flex;height:630px;justify-content:center;width:1200px;}#text{font-family:"M PLUS Rounded 1c";font-size: 40px;}</style></head><body><div id="app"><p id="text">text</p></div></body></html>',
     {
-      waitUntil: 'networkidle0',
+      waitUntil: 'networkidle2',
     }
   );
 
