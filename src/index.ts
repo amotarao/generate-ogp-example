@@ -8,7 +8,7 @@ export const example = async (req: Request, res: Response): Promise<void> => {
     args: ['--no-sandbox'],
   });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1280, height: 720 });
+  await page.setViewport({ width: 1200, height: 630 });
 
   await page.evaluate(() => {
     const text = document.createElement('div');
